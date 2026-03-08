@@ -72,7 +72,7 @@
         "minimax/MiniMax-M2.5": {},
         "aliyuncs/qwen3.5-plus": {}
       },
-      "workspace": "/home/seekey/.openclaw/workspace",
+      "workspace": "/root/.openclaw/workspace",
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8
