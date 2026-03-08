@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: office-openclaw:latest
-    container_name: office-openclaw
+    image: docker-openclaw:latest
+    container_name: docker-openclaw
     ports:
       - "18789:18789"
     volumes:
