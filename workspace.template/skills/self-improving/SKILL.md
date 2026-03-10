@@ -14,7 +14,7 @@ User corrects you or points out mistakes. You complete significant work and want
 
 ## Architecture
 
-Memory lives in `~/self-improving/` with tiered structure. If `~/self-improving/` does not exist, run `setup.md`.
+Memory lives in `/root/.openclaw/workspace/skills/self-improving/` with tiered structure. If `/root/.openclaw/workspace/skills/self-improving/` does not exist, run `setup.md`.
 
 ```
 ~/self-improving/
@@ -193,13 +193,13 @@ If context limit hit:
 
 This skill ONLY:
 - Learns from user corrections and self-reflection
-- Stores preferences in local files (`~/self-improving/`)
+- Stores preferences in local files (`/root/.openclaw/workspace/skills/self-improving/`)
 - Reads its own memory files on activation
 
 This skill NEVER:
 - Accesses calendar, email, or contacts
 - Makes network requests
-- Reads files outside `~/self-improving/`
+- Reads files outside `/root/.openclaw/workspace/skills/self-improving/`
 - Infers preferences from silence or observation
 - Modifies its own SKILL.md
 

@@ -1,6 +1,6 @@
 # Memory Template
 
-Copy this structure to `~/self-improving/memory.md` on first use.
+Copy this structure to `/root/.openclaw/workspace/skills/self-improving/memory.md` on first use.
 
 ```markdown
 # Self-Improving Memory
@@ -20,13 +20,13 @@ Copy this structure to `~/self-improving/memory.md` on first use.
 Create on first activation:
 
 ```bash
-mkdir -p ~/self-improving/{projects,domains,archive}
-touch ~/self-improving/{memory.md,index.md,corrections.md}
+mkdir -p /root/.openclaw/workspace/skills/self-improving/{projects,domains,archive}
+touch /root/.openclaw/workspace/skills/self-improving/{memory.md,index.md,corrections.md}
 ```
 
 ## Index Template
 
-For `~/self-improving/index.md`:
+For `/root/.openclaw/workspace/skills/self-improving/index.md`:
 
 ```markdown
 # Memory Index
@@ -45,7 +45,7 @@ Last compaction: never
 
 ## Corrections Log Template
 
-For `~/self-improving/corrections.md`:
+For `/root/.openclaw/workspace/skills/self-improving/corrections.md`:
 
 ```markdown
 # Corrections Log

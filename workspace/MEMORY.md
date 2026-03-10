@@ -21,16 +21,14 @@ skills/
 
 When creating a new skill:
 1. Create source files in `skills/skill-name/`
-2. Package with `package_skill.py`
-3. Save package to `skills/skill-name.skill`
-4. Update `TOOLS.md` and `memory.md` with relevant paths
+2. Update `TOOLS.md` and `MEMORY.md` with relevant paths
 
 ## Skill Package Location
 
 All skill packages are stored in: `/root/.openclaw/workspace/skills/`
 
-- `ability-access-token.skill`
-- `ability-leave-remainder.skill`
+- `agent-browser`
+- `self-imporving`
 
 ## Skill Source Files
 

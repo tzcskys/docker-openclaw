@@ -5,15 +5,15 @@
 ### 1. Create Memory Structure
 
 ```bash
-mkdir -p ~/self-improving/{projects,domains,archive}
+mkdir -p /root/.openclaw/workspace/skills/self-improving/{projects,domains,archive}
 ```
 
 ### 2. Initialize Core Files
 
-Create `~/self-improving/memory.md` using `memory-template.md`:
+Create `/root/.openclaw/workspace/skills/self-improving/memory.md` using `memory-template.md`:
 
 ```markdown
-Copy the structure from `memory-template.md` into `~/self-improving/memory.md`.
+Copy the structure from `memory-template.md` into `/root/.openclaw/workspace/skills/self-improving/memory.md`.
 ```
 
 Memory file baseline:
@@ -27,7 +27,7 @@ Memory file baseline:
 ## Rules
 ```
 
-Create `~/self-improving/corrections.md`:
+Create `/root/.openclaw/workspace/skills/self-improving/corrections.md`:
 ```markdown
 # Corrections Log
 
@@ -35,7 +35,7 @@ Create `~/self-improving/corrections.md`:
 |------|-----------------|----------------|--------|
 ```
 
-Create `~/self-improving/index.md`:
+Create `/root/.openclaw/workspace/skills/self-improving/index.md`:
 ```markdown
 # Memory Index
 
@@ -67,7 +67,7 @@ Add this section to your `SOUL.md`:
 ```markdown
 **Self-Improving**
 Compounding execution quality is part of the job.
-Before non-trivial work, load `~/self-improving/memory.md` and only the smallest relevant domain or project files.
+Before non-trivial work, load `/root/.openclaw/workspace/skills/self-improving/memory.md` and only the smallest relevant domain or project files.
 After corrections, failed attempts, or reusable lessons, write one concise entry to the correct self-improving file immediately.
 Prefer learned rules when relevant, but keep self-inferred rules revisable.
 Do not skip retrieval just because the task feels familiar.
@@ -82,31 +82,31 @@ If your `## Memory` block differs from the default template, insert the same add
 Add this line in the continuity list (next to Daily notes and Long-term):
 
 ```markdown
-- **Self-improving:** `~/self-improving/` (via `self-improving` skill) — execution-improvement memory (preferences, workflows, style patterns, what improved/worsened outcomes)
+- **Self-improving:** `/root/.openclaw/workspace/skills/self-improving/` (via `self-improving` skill) — execution-improvement memory (preferences, workflows, style patterns, what improved/worsened outcomes)
 ```
 
 Right after the sentence "Capture what matters...", add:
 
 ```markdown
 Use `memory/YYYY-MM-DD.md` and `MEMORY.md` for factual continuity (events, context, decisions).
-Use `~/self-improving/` for compounding execution quality across tasks.
-For compounding quality, read `~/self-improving/memory.md` before non-trivial work, then load only the smallest relevant domain or project files.
-If in doubt, store factual history in `memory/YYYY-MM-DD.md` / `MEMORY.md`, and store reusable performance lessons in `~/self-improving/` (tentative until human validation).
+Use `/root/.openclaw/workspace/skills/self-improving/` for compounding execution quality across tasks.
+For compounding quality, read `/root/.openclaw/workspace/skills/self-improving/memory.md` before non-trivial work, then load only the smallest relevant domain or project files.
+If in doubt, store factual history in `memory/YYYY-MM-DD.md` / `MEMORY.md`, and store reusable performance lessons in `/root/.openclaw/workspace/skills/self-improving/` (tentative until human validation).
 ```
 
 Before the "Write It Down" subsection, add:
 
 ```markdown
 Before any non-trivial task:
-- Read `~/self-improving/memory.md`
+- Read `/root/.openclaw/workspace/skills/self-improving/memory.md`
 - List available files first:
   ```bash
-  for d in ~/self-improving/domains ~/self-improving/projects; do
+  for d in /root/.openclaw/workspace/skills/self-improving/domains /root/.openclaw/workspace/skills/self-improving/projects; do
     [ -d "$d" ] && find "$d" -maxdepth 1 -type f -name "*.md"
   done | sort
   ```
-- Read up to 3 matching files from `~/self-improving/domains/`
-- If a project is clearly active, also read `~/self-improving/projects/<project>.md`
+- Read up to 3 matching files from `/root/.openclaw/workspace/skills/self-improving/domains/`
+- If a project is clearly active, also read `/root/.openclaw/workspace/skills/self-improving/projects/<project>.md`
 - Do not read unrelated domains "just in case"
 
 If inferring a new rule, keep it tentative until human validation.
