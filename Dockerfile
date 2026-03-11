@@ -23,7 +23,7 @@ RUN apt update \
 # RUN rm -rf google-chrome-stable_current_amd64.deb
 
 # 安装 OpenClaw
-RUN npm install -g openclaw@latest
+RUN npm i -g openclaw
 # 安装 智能体浏览器
 RUN npm install -g agent-browser && agent-browser install
 
