@@ -85,7 +85,21 @@
   "commands": {
     "native": "auto",
     "nativeSkills": "auto",
-    "restart": true
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "self-improvement": {
+          "enabled": true
+        }
+      }
+    }
   },
   "browser": {
     "enabled": true,
@@ -93,13 +107,31 @@
     "headless": true,
 	"noSandbox": true
   },
+  "channels": {
+	"feishu": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "accounts": {
+        "default": {
+          "appId": "${FEISHU_APP_ID}",
+          "appSecret": "${FEISHU_APP_SECRET}"
+        }
+      }
+    }
+  },
   "gateway": {
     "port": 18789,
     "mode": "local",
     "bind": "lan",
     "auth": {
       "mode": "token",
-      "token": "${WEBCHAT_TOKEN}"
+      "token": "${WEBCHAT_TOKEN}",
+      "rateLimit": {
+        "maxAttempts": 10,
+        "windowMs": 60000,
+        "lockoutMs": 300000,
+        "exemptLoopback": true
+	    }
     },
     "tailscale": {
       "mode": "off",
@@ -112,20 +144,23 @@
         }
       }
     },
-    "nodes": {
-      "denyCommands": [
-        "camera.snap",
-        "camera.clip",
-        "screen.record",
-        "calendar.add",
-        "contacts.add",
-        "reminders.add"
+    "controlUi": {
+        "allowedOrigins": [
+        "http://localhost:18789"
       ]
+    }
+  },
+  "plugins": {
+    "entries": {
+      "feishu": {
+        "enabled": true
+      }
     },
-	"controlUi": {
-      "allowedOrigins": [
-	    "http://localhost:18789"
-	  ]
-	}
+    "allow": [
+      "feishu"
+    ]
+  },
+  "tools": {
+    "profile": "minimal"
   }
 }

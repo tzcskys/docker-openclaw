@@ -30,6 +30,11 @@ RUN npm install -g agent-browser && agent-browser install
 # 非交互式初始化配置
 RUN yes "" | openclaw setup
 
+# 飞书插件
+RUN openclaw plugins install @openclaw/feishu
+# 删除重复文件
+RUN rm -rf /root/.openclaw/extensions/feishu
+
 # 复制自动审批文件
 RUN mkdir -p /opt/scripts/
 ADD ./scripts/* /opt/scripts/

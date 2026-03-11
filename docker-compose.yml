@@ -17,6 +17,8 @@ services:
       - MINIMAX_API_KEY=YOUR_MINIMAX_API_KEY
       - ALIYUNCS_API_KEY=YOUR_ALIYUNCS_API_KEY
       - WEBCHAT_TOKEN=WHAT_EVER_YOU_WANT
+      - FEISHU_APP_ID=YOUR_FEISHU_APP_ID
+      - FEISHU_APP_SECRET=YOUR_FEISHU_APP_SECRET
     restart: unless-stopped
     networks:
       - openclaw-network
