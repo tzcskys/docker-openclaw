@@ -161,6 +161,6 @@
     ]
   },
   "tools": {
-    "profile": "minimal"
+    "profile": "full"
   }
 }
