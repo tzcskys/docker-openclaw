@@ -51,6 +51,20 @@
             },
             "contextWindow": 1000000,
             "maxTokens": 64000
+          },
+          {
+            "id": "qwen3-vl-plus",
+            "name": "Qwen3-VL-Plus",
+            "reasoning": false,
+            "input": ["text", "image"],
+            "cost": {
+              "input": 0.2,
+              "output": 0.6,
+              "cacheRead": 0.02,
+              "cacheWrite": 0.2
+            },
+            "contextWindow": 131072,
+            "maxTokens": 32768
           }
         ]
       }
@@ -63,10 +77,10 @@
           "minimax/MiniMax-M2.5",
           "aliyuncs/qwen3.5-plus"
         ],
-        "primary": "minimax/MiniMax-M2.5"
+        "primary": "${PRIMARY_MODEL}"
       },
       "imageModel": {
-        "primary": "minimax/MiniMax-M2.5"
+        "primary": "${PRIMARY_VL_MODEL}"
       },
       "models": {
         "minimax/MiniMax-M2.5": {},

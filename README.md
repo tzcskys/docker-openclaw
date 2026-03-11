@@ -77,14 +77,16 @@ docker-compose logs -f
 
 在 `docker-compose.yml` 中配置：
 
-| 变量名 | 必填 | 说明 |
-|--------|------|------|
-| `TZ` | 否 | 时区，默认 Asia/Shanghai |
-| `MINIMAX_API_KEY` | 是 | MiniMax API Key |
-| `ALIYUNCS_API_KEY` | 否 | 阿里云 API Key (备用模型) |
-| `WEBCHAT_TOKEN` | 否 | WebChat 访问令牌 |
-| `FEISHU_APP_ID` | 否 | 飞书应用 ID |
-| `FEISHU_APP_SECRET` | 否 | 飞书应用密钥 |
+| 变量名 | 必填 | 默认值 | 说明 |
+|--------|------|--------|------|
+| `TZ` | 否 | Asia/Shanghai | 时区 |
+| `MINIMAX_API_KEY` | 是 | - | MiniMax API Key |
+| `ALIYUNCS_API_KEY` | 否 | - | 阿里云 API Key (备用模型) |
+| `PRIMARY_MODEL` | 否 | aliyuncs/qwen3.5-plus | 主用模型 |
+| `PRIMARY_VL_MODEL` | 否 | aliyuncs/qwen3-vl-plus | 视觉模型 (支持图片理解) |
+| `WEBCHAT_TOKEN` | 否 | - | WebChat 访问令牌 |
+| `FEISHU_APP_ID` | 否 | - | 飞书应用 ID |
+| `FEISHU_APP_SECRET` | 否 | - | 飞书应用密钥 |
 
 ### 配置文件
 
@@ -97,6 +99,21 @@ docker-compose logs -f
 - 插件配置
 
 详见 [OpenClaw 配置文档](https://docs.openclaw.ai/gateway/configuration)
+
+### 切换模型
+
+可通过环境变量灵活切换主用模型：
+
+```bash
+# 使用默认配置 (Qwen3.5 Plus + Qwen3-VL-Plus)
+docker-compose up -d
+
+# 使用 MiniMax 作为主模型
+PRIMARY_MODEL=minimax/MiniMax-M2.5 docker-compose up -d
+
+# 使用自定义模型组合
+PRIMARY_MODEL=aliyuncs/qwen3.5-plus PRIMARY_VL_MODEL=aliyuncs/qwen3-vl-plus docker-compose up -d
+```
 
 ### 配置文件示例
 
