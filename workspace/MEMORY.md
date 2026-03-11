@@ -8,6 +8,10 @@
 - **禁止使用 web_fetch：** 用户要求不再使用 web_fetch 工具
 - **执行命令前先检查 Skill：** 遇到任务时，先检查是否有相关 Skill 可用，再决定是否使用 Skill
 
+## Ability Platform Credentials
+
+For querying leave balance and other internal system APIs.
+
 ## Skill Development Convention
 
 **All new skills must be saved to `/root/.openclaw/workspace/skills/` folder.**
