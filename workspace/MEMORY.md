@@ -12,6 +12,12 @@
 
 For querying leave balance and other internal system APIs.
 
+
+## 项目文件存放
+
+所有项目文件统一存放在：`/root/.openclaw/workspace/projects/`
+
+
 ## Skill Development Convention
 
 **All new skills must be saved to `/root/.openclaw/workspace/skills/` folder.**

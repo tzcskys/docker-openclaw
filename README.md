@@ -57,10 +57,26 @@ cd docker-openclaw
 
 # 3. 构建并运行
 docker-compose up -d
+### 如果将token保存到docker-compose_personal.yml文件，
+### 则通过docker-compose -f docker-compose_personal.yml up -d启动
 
 # 4. 查看日志
 docker-compose logs -f
 ```
+
+### 企业微信配置（老版本）
+
+参照腾讯官方教程：
+
+```
+1. 在企微里用api长连接模式创建一个机器人bot；获取其QYWECHAT_BOT_ID及QYWECHAT_SECRET并配置到docker-compose_personal.yml文件中；
+2. 在企微中与给机器人发一个消息，获取pairing code；
+3. 进入openclaw 镜像中，docker exec -it docker-openclaw /bin/bash
+4. 执行openclaw pairing approve wecom < pairing CODE>即可。
+5. exit 退出openclaw镜像
+```
+
+每次重启docker 镜像都需要从2开始重做。
 
 ### 首次访问
 

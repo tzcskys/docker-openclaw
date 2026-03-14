@@ -43,7 +43,8 @@ Add whatever helps you do your job. This is your cheat sheet.
 
 | Component | Path | Package |
 |-----------|------|---------|
-| Skill Packages | `/root/.openclaw/workspace/skills/` | All `.skill` files |
+| Skill Packages | `/root/.openclaw/workspace/skills/`
+
 
 ### Skill Structure
 
