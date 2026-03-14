@@ -13,10 +13,26 @@ RUN apt install -y \
        libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 \
        libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2
 
-# 安装 OpenClaw
-RUN npm i -g openclaw
-# 安装 智能体浏览器
-RUN npm install -g agent-browser && agent-browser install
+# # 安装 OpenClaw
+# RUN npm i -g openclaw
+
+# ===== 指定openclaw版本参数 =====
+ARG OPENCLAW_VERSION=latest
+# ARG OPENCLAW_VERSION=OpenClaw 2026.3.8
+
+# ===== 安装 OpenClaw（构建时固定版本）=====
+RUN if [ "$OPENCLAW_VERSION" = "latest" ]; then \
+        npm i -g openclaw; \
+    else \
+        npm i -g "openclaw@${OPENCLAW_VERSION}"; \
+    fi \
+    && npm cache clean --force
+
+
+# 安装 agent-browser，但不要用agent-browser下载 Chrome for Testing (官方不提供arm64版)
+RUN npm install -g agent-browser
+# 设置使用系统 Chromium
+ENV AGENT_BROWSER_EXECUTABLE_PATH=/usr/bin/chromium
 
 # 非交互式初始化配置
 RUN yes "" | openclaw setup

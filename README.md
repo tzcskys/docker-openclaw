@@ -60,7 +60,12 @@ docker-compose up -d
 ### 如果将token保存到docker-compose_personal.yml文件，
 ### 则通过docker-compose -f docker-compose_personal.yml up -d启动
 
-# 4. 查看日志
+# 4. 新版启动的时候可能要在镜像内允许device
+## 本地浏览器打开localhost/18789，并输入token，提示需要pairing
+docker exec -it docker-openclaw /bin/bash
+openclaw devices approve
+
+# 5. 查看日志
 docker-compose logs -f
 ```
 
@@ -76,7 +81,7 @@ docker-compose logs -f
 5. exit 退出openclaw镜像
 ```
 
-每次重启docker 镜像都需要从2开始重做。
+每次docker compose up -d都需要从2开始重做。
 
 ### 首次访问
 
@@ -198,7 +203,7 @@ docker-compose logs -f
 # 查看实时日志 (仅 OpenClaw)
 docker-compose logs -f openclaw
 
-# 重启服务
+# 重启服务（可保持容器内的变化仍能使用，如更新openclaw） 
 docker-compose restart
 
 # 停止服务
