@@ -52,7 +52,7 @@ git clone https://github.com/seekeyl/docker-openclaw.git
 cd docker-openclaw
 
 # 2. 配置环境变量
-编辑 config/openclaw.json，配置你的 API url 和渠道
+编辑 ./openclaw/config/openclaw.json，配置你的 API url 和渠道
 复制 docker-compose.yml 为 docker-compose_personal.yml，在后者配置你的 API key
 
 # 3. 构建并运行
@@ -110,7 +110,7 @@ docker-compose logs -f
 
 ### 配置文件
 
-配置文件挂载在 `config/openclaw.json`，可自定义配置项：
+配置文件挂载在 `.openclaw/openclaw.json`，可自定义配置项：
 
 - 模型提供商配置
 - 消息渠道 (飞书、企业微信、Telegram 等)
@@ -166,20 +166,9 @@ PRIMARY_MODEL=aliyuncs/qwen3.5-plus PRIMARY_VL_MODEL=aliyuncs/qwen3-vl-plus dock
 docker-openclaw/
 ├── Dockerfile              # Docker 镜像构建文件
 ├── docker-compose.yml      # Docker Compose 编排文件
-├── config/                 # 配置文件目录
-│   └── openclaw.json      # OpenClaw 配置文件模板
-├── workspace/              # 工作空间目录 (挂载到容器)
-├── scripts/                # 自动审批脚本
-│   ├── approve.sh         # 命令审批脚本
-│   ├── approve-10s.sh     # 10秒自动审批循环
-│   └── supervisord.conf  # Supervisor 配置
-├── run.sh                  # Linux 运行脚本
-├── run.bat                 # Windows 运行脚本
-├── build.sh                # Linux 构建脚本
-├── build.bat               # Windows 构建脚本
-├── browser_approve.sh      # 浏览器审批脚本 (Linux)
-├── browser_approve.bat     # 浏览器审批脚本 (Windows)
-└── LICENSE                 # MIT 许可证
+├── .openclaw/              # openclaw工作文件目录
+│   └── openclaw.json       # OpenClaw 配置文件
+│   └── ...
 ```
 
 ## 🔧 常用操作

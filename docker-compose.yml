@@ -10,8 +10,7 @@ services:
     ports:
       - "18789:18789"
     volumes:
-      - ./config/openclaw.json:/root/.openclaw/openclaw.json
-      - ./workspace:/root/.openclaw/workspace
+      - ./.openclaw:/root/.openclaw
     environment:
       - TZ=Asia/Shanghai
       - MINIMAX_API_KEY=YOUR_MINIMAX_API_KEY

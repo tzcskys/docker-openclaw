@@ -46,13 +46,8 @@ RUN rm -rf /root/.openclaw/extensions/feishu
 RUN openclaw plugins install @wecom/wecom-openclaw-plugin@latest
 
 
-# 复制自动审批文件
-RUN mkdir -p /opt/scripts/
-ADD ./scripts/* /opt/scripts/
-RUN mv /opt/scripts/supervisord.conf /etc/supervisor/conf.d/
-
 # 暴露端口（仅 gateway 端口）
 EXPOSE 18789
 
-# 启动命令：gateway 同时运行
-CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
+# 启动命令
+CMD ["/bin/bash", "-c", "openclaw gateway --bind lan --port 18789 --allow-unconfigured"]
