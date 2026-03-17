@@ -43,14 +43,12 @@
             "name": "qwen3.5-plus",
             "reasoning": false,
             "input": ["text", "image"],
-            "cost": {
-              "input": 0.8,
-              "output": 4.8,
-              "cacheRead": 0.08,
-              "cacheWrite": 1
-            },
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
             "contextWindow": 1000000,
-            "maxTokens": 65536
+            "maxTokens": 65536,
+            "compat": {
+              "thinkingFormat": "qwen"
+            }
           },
           {
             "id": "qwen3-max-2026-01-23",
@@ -59,7 +57,10 @@
             "input": ["text"],
             "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
             "contextWindow": 262144,
-            "maxTokens": 65536
+            "maxTokens": 65536,
+            "compat": {
+              "thinkingFormat": "qwen"
+            }
           },
           {
             "id": "qwen3-coder-next",
@@ -71,13 +72,34 @@
             "maxTokens": 65536
           },
           {
+            "id": "qwen3-coder-plus",
+            "name": "qwen3-coder-plus",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "contextWindow": 1000000,
+            "maxTokens": 65536
+          },
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax-M2.5",
+            "reasoning": false,
+            "input": ["text"],
+            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+            "contextWindow": 196608,
+            "maxTokens": 32768
+          },
+          {
             "id": "glm-5",
             "name": "glm-5",
             "reasoning": false,
             "input": ["text"],
             "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
             "contextWindow": 202752,
-            "maxTokens": 16384
+            "maxTokens": 16384,
+            "compat": {
+              "thinkingFormat": "qwen"
+            }
           },
           {
             "id": "glm-4.7",
@@ -86,7 +108,10 @@
             "input": ["text"],
             "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
             "contextWindow": 202752,
-            "maxTokens": 16384
+            "maxTokens": 16384,
+            "compat": {
+              "thinkingFormat": "qwen"
+            }
           },
           {
             "id": "kimi-k2.5",
@@ -95,7 +120,10 @@
             "input": ["text", "image"],
             "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
             "contextWindow": 262144,
-            "maxTokens": 32768
+            "maxTokens": 32768,
+            "compat": {
+              "thinkingFormat": "qwen"
+            }
           }
         ]
       }
@@ -105,8 +133,8 @@
     "defaults": {
       "model": {
         "fallbacks": [
-          // "minimax/MiniMax-M2.5",
-          "aliyuncs/qwen3.5-plus"
+          "aliyuncs/glm-5",
+          "aliyuncs/kimi-k2.5"
         ],
         "primary": "${PRIMARY_MODEL}"
       },
@@ -114,8 +142,14 @@
         "primary": "${PRIMARY_VL_MODEL}"
       },
       "models": {
-        // "minimax/MiniMax-M2.5": {},
-        "aliyuncs/qwen3.5-plus": {}
+        "aliyuncs/qwen3.5-plus": {},
+        "aliyuncs/qwen3-max-2026-01-23": {},
+        "aliyuncs/qwen3-coder-next": {},
+        "aliyuncs/qwen3-coder-plus": {},
+        "aliyuncs/MiniMax-M2.5": {},
+        "aliyuncs/glm-5": {},
+        "aliyuncs/glm-4.7": {},
+        "aliyuncs/kimi-k2.5": {}
       },
       "workspace": "/root/.openclaw/workspace",
       "maxConcurrent": 4,
