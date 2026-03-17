@@ -218,7 +218,7 @@ docker exec -it docker-openclaw openclaw devices list
 
 ```bash
 # 手动审批所有待定请求
-docker exec -it docker-openclaw openclaw devices approve --all
+docker exec -it docker-openclaw openclaw devices approve
 
 # 查看审批日志
 docker exec -it docker-openclaw tail -f /tmp/openclaw-approve.log

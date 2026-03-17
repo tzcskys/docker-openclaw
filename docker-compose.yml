@@ -10,7 +10,14 @@ services:
     ports:
       - "18789:18789"
     volumes:
-      - ./.openclaw:/root/.openclaw
+      - ./openclaw/openclaw.json:/root/.openclaw/openclaw.json
+      - ./openclaw/workspace:/root/.openclaw/workspace
+      - ./openclaw/agents:/root/.openclaw/agents
+      - ./openclaw/canvas:/root/.openclaw/canvas
+      - ./openclaw/credentials:/root/.openclaw/credentials
+      - ./openclaw/cron:/root/.openclaw/cron
+      - ./openclaw/logs:/root/.openclaw/logs
+      - ./openclaw/memory:/root/.openclaw/memory
     environment:
       - TZ=Asia/Shanghai
       - MINIMAX_API_KEY=YOUR_MINIMAX_API_KEY
