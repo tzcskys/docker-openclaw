@@ -52,24 +52,21 @@ git clone https://github.com/seekeyl/docker-openclaw.git
 cd docker-openclaw
 
 # 2. 配置环境变量
-# 编辑 config/openclaw.json，配置你的 API Key 和渠道
-# 或编辑 docker-compose.yml 中的环境变量
+编辑 config/openclaw.json，配置你的 API url 和渠道
+复制 docker-compose.yml 为 docker-compose_personal.yml，在后者配置你的 API key
 
 # 3. 构建并运行
-docker-compose up -d
-### 如果将token保存到docker-compose_personal.yml文件，
-### 则通过docker-compose -f docker-compose_personal.yml up -d启动
+docker-compose -f docker-compose_personal.yml up -d
 
 # 4. 新版启动的时候可能要在镜像内允许device
 ## 本地浏览器打开localhost/18789，并输入token，提示需要pairing
-docker exec -it docker-openclaw /bin/bash
-openclaw devices approve
+docker exec -it docker-openclaw /bin/bash openclaw devices approve
 
 # 5. 查看日志
 docker-compose logs -f
 ```
 
-### 企业微信配置（老版本）
+### 企业微信配置（docker内）
 
 参照腾讯官方教程：
 
@@ -82,6 +79,8 @@ docker-compose logs -f
 ```
 
 每次docker compose up -d都需要从2开始重做。
+
+注意：暂无法采用在dockerfile中使用 `npx -y @wecom/wecom-openclaw-cli install` 的方式来安装插件，因为这是一个这种方式是交互式插件安装，需要光标点击/扫码，无法在docker build时自动完成，会报错。
 
 ### 首次访问
 

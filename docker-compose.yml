@@ -21,6 +21,8 @@ services:
       - WEBCHAT_TOKEN=WHAT_EVER_YOU_WANT
       - FEISHU_APP_ID=YOUR_FEISHU_APP_ID
       - FEISHU_APP_SECRET=YOUR_FEISHU_APP_SECRET
+      - QYWECHAT_BOT_ID=wecom_bot_id
+      - QYWECHAT_SECRET=wecom_bot_secret
     restart: unless-stopped
     networks:
       - openclaw-network

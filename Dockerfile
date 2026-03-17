@@ -43,7 +43,8 @@ RUN openclaw plugins install @openclaw/feishu
 RUN rm -rf /root/.openclaw/extensions/feishu
 
 # 企微插件
-RUN openclaw plugins install @wecom/wecom-openclaw-plugin@1.0.7-beta.1
+RUN openclaw plugins install @wecom/wecom-openclaw-plugin@latest
+
 
 # 复制自动审批文件
 RUN mkdir -p /opt/scripts/
