@@ -110,13 +110,15 @@ docker-compose logs -f
 
 ### 配置文件
 
-配置文件挂载在 `.openclaw/openclaw.json`，可自定义配置项：
+配置文件挂载在 `openclaw/openclaw.json`，可自定义配置项：
 
 - 模型提供商配置
 - 消息渠道 (飞书、企业微信、Telegram 等)
 - 安全策略
 - 执行审批规则
 - 插件配置
+
+其他已经挂载用来持久化的目录详见docker-compose.yml或docker-compose_personal.yml文件
 
 详见 [OpenClaw 配置文档](https://docs.openclaw.ai/gateway/configuration)
 
