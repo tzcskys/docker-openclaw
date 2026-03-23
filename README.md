@@ -59,8 +59,8 @@ cd docker-openclaw
 docker-compose -f docker-compose_personal.yml up -d
 
 # 4. 新版启动的时候可能要在镜像内允许device
-## 本地浏览器打开localhost/18789，并输入token，提示需要pairing
-docker exec -it docker-openclaw /bin/bash openclaw devices approve
+## 本地浏览器打开localhost/18789，并输入token，提示需要pairing，再执行
+docker exec docker-openclaw openclaw devices approve
 
 # 5. 查看日志
 docker-compose logs -f
